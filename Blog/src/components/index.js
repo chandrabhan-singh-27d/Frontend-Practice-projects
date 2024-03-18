@@ -1,13 +1,23 @@
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import Container from "./container/Container"
-import Logo from "./Logo";
+import Logo from "./UI/Logo";
+import Button from "./UI/Button";
+import Input from "./UI/Input";
 import LogoutBtn from "./Header/LogoutBtn";
+import Login from "./AuthPages/Login";
+import SignUp from "./AuthPages/SignUp";
+import Protected from "./AuthPages/AuthLayout";
 
 export {
     Header,
     Footer,
     Container,
     Logo,
-    LogoutBtn
+    Button,
+    Input,
+    LogoutBtn,
+    Login,
+    SignUp,
+    Protected
 }
