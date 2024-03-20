@@ -1,11 +1,15 @@
 <script setup>
-import { onMounted, ref, watch } from 'vue';
+import { onMounted, ref, watch, watchEffect } from 'vue';
 
 const password = ref("");
 const passwordLength = ref(12);
 const isNumberAllowed = ref(false);
 const isSpecialCharAllowed = ref(false);
 const passwordRef = ref(null);
+
+onMounted(() => {
+  generatePassword();
+})
 
 const generatePassword = () => {
   let tempPassword = "";
@@ -21,30 +25,35 @@ const generatePassword = () => {
   password.value = tempPassword;
 }
 
-onMounted(() => {
-  generatePassword();
-})
-
-watch(passwordLength, (oldLength, newLength) => {
-  if(newLength !== oldLength) {
-    generatePassword();
-  }
-})
-watch(isNumberAllowed, (oldVal, newVal) => {
-  if(newVal !== oldVal) {
-    generatePassword();
-  }
-})
-watch(isSpecialCharAllowed, (oldVal, newVal) => {
-  if(newVal !== oldVal) {
-    generatePassword();
-  }
-})
-
 const copyGeneratedPassword = () => {
   passwordRef.value?.select();
   window.navigator.clipboard.writeText(password.value);
 }
+
+
+
+/* 
+using watch we need to give the reactive properties as the dependencies to watch for. 
+*/
+
+// watch([passwordLength, isNumberAllowed, isSpecialCharAllowed], () => generatePassword())
+
+/* 
+using watchEffect generally tracks all the dependencies of the passed callback and trigger the function whenever anyone of those change.
+*/
+watchEffect(() => generatePassword())
+
+/* 
+
+Note: We do not need to use watchers for something related with DOM interactions, we can alternatively use the event listeners for them like
+----------------------------------------------------------------------------------------------------------------------------------------
+<input type="range" :min="8" :max="30" class='accent-blue-600 hover:accent-blue-600 cursor-pointer' id='password-length' v-model="passwordLength" @input="generatePassword" />
+----------------------------------------------------------------------------------------------------------------------------------------
+<input type="checkbox" id="number-allowed" v-model="isNumberAllowed" class="w-4 h-4 accent-blue-700 outline-none mr-2" @change="generatePassword" />
+----------------------------------------------------------------------------------------------------------------------------------------
+<input type="checkbox" id="char-allowed" v-model="isSpecialCharAllowed" class="w-4 h-4 accent-blue-700 outline-none mr-2" @change="generatePassword" />
+
+*/
 
 </script>
 
