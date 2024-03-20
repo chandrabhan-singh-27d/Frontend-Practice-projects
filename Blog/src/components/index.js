@@ -8,6 +8,8 @@ import LogoutBtn from "./Header/LogoutBtn";
 import Login from "./AuthPages/Login";
 import SignUp from "./AuthPages/SignUp";
 import Protected from "./AuthPages/AuthLayout";
+import RTE from "./RTE";
+
 
 export {
     Header,
@@ -19,5 +21,6 @@ export {
     LogoutBtn,
     Login,
     SignUp,
-    Protected
+    Protected,
+    RTE
 }
