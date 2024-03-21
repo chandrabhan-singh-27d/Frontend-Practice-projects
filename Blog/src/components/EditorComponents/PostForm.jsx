@@ -1,11 +1,11 @@
 import { useCallback, useEffect } from "react"
 import { useForm } from "react-hook-form"
-import { Button, Input, Select, RTE } from './index'
+import { Button, Input, Select, RTE } from '../index'
 import { useNavigate } from "react-router-dom"
 import { useSelector } from "react-redux"
-import storageService from "../appwrite/appwriteFileConf"
-import postService from "../appwrite/appwritePostConf"
-import RTE from "./index"
+import storageService from "../../appwrite/appwriteFileConf"
+import postService from "../../appwrite/appwritePostConf"
+import RTE from "../index"
 
 const PostForm = ({ post }) => {
 

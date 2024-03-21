@@ -8,7 +8,9 @@ import LogoutBtn from "./Header/LogoutBtn";
 import Login from "./AuthPages/Login";
 import SignUp from "./AuthPages/SignUp";
 import Protected from "./AuthPages/AuthLayout";
-import RTE from "./RTE";
+import RTE from "./EditorComponents/RTE";
+import PostForm from "./EditorComponents/PostForm";
+import PostCard from "./UI/PostCard";
 
 
 export {
@@ -22,5 +24,7 @@ export {
     Login,
     SignUp,
     Protected,
-    RTE
+    RTE,
+    PostForm,
+    PostCard
 }
