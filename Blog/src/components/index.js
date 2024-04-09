@@ -1,17 +1,17 @@
-import Header from "./Header/Header";
-import Footer from "./Footer/Footer";
-import Container from "./container/Container"
-import Logo from "./UI/Logo";
-import Button from "./UI/Button";
-import Input from "./UI/Input";
-import LogoutBtn from "./Header/LogoutBtn";
-import Login from "./AuthPages/Login";
-import SignUp from "./AuthPages/SignUp";
-import Protected from "./AuthPages/AuthLayout";
-import RTE from "./EditorComponents/RTE";
-import PostForm from "./EditorComponents/PostForm";
-import PostCard from "./UI/PostCard";
-
+import Header from "./Header/Header.jsx";
+import Footer from "./Footer/Footer.jsx";
+import Container from "./container/Container.jsx"
+import Logo from "./UI/Logo.jsx";
+import Button from "./UI/Button.jsx";
+import Input from "./UI/Input.jsx";
+import LogoutBtn from "./Header/LogoutBtn.jsx";
+import Login from "./AuthPages/Login.jsx";
+import SignUp from "./AuthPages/SignUp.jsx";
+import RTE from "./EditorComponents/RTE.jsx";
+import PostForm from "./EditorComponents/PostForm.jsx";
+import PostCard from "./UI/PostCard.jsx";
+import ProtectedAuth from "./AuthPages/ProtectedAuth.jsx";
+import Select from "./UI/Select.jsx"
 
 export {
     Header,
@@ -23,8 +23,9 @@ export {
     LogoutBtn,
     Login,
     SignUp,
-    Protected,
     RTE,
     PostForm,
-    PostCard
+    PostCard,
+    ProtectedAuth,
+    Select
 }

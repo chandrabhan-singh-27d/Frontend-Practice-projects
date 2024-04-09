@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom"
 import { useSelector } from "react-redux"
 import storageService from "../../appwrite/appwriteFileConf"
 import postService from "../../appwrite/appwritePostConf"
-import RTE from "../index"
 
 const PostForm = ({ post }) => {
 

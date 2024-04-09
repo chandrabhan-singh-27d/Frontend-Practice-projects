@@ -7,7 +7,7 @@ export class Service {
 
     constructor() {
         this.client
-            .setEndpoint(config.aapwriteURL)
+            .setEndpoint(config.appwriteURL)
             .setProject(config.appwriteProjectId)
         this.bucket = new Storage(this.client);
     }

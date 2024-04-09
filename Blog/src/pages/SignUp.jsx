@@ -1,8 +1,9 @@
-import { SignUp as signUpComponent } from "../components"
+import { SignUp as SignUpComponent } from "../components"
+
 const SignUp = () => {
   return (
     <div className="py-8">
-        <signUpComponent />
+        <SignUpComponent />
     </div>
   )
 }
